@@ -335,7 +335,23 @@ echo "Số lượng phần tử trong mảng là: $number";
 <br>
 <!-- Câu 18. Viết chương trình PHP để đếm số lần xuất hiện của một phần tử trong một mảng. -->
 <p>Câu 18</p>
-
+<?php
+function countOccurrences($arr, $element)
+{
+    $count = 0;
+    foreach ($arr as $value) {
+       
+        if ($value == $element) {
+            $count++;
+        }
+    }
+    return $count;
+}
+$array = [7, 2, 4, 7, 6 ,7];
+$element = 7;
+$occurrences = countOccurrences($array, $element);
+echo "Số lần xuất hiện của phần tử $element trong mảng là: " . $occurrences;
+?>
 <br>
 <!-- Câu 19. Viết chương trình PHP để sắp xếp một mảng theo thứ tự giảm dần. -->
 <p>Câu 19</p>
