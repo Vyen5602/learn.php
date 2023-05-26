@@ -15,7 +15,7 @@ echo checkEvenNumber($number);
 <!-- Câu 2. Viết chương trình PHP để tính tổng của các số từ 1 đến n. -->
 <p>Câu 2</p>
 <?php
-function tinhTong($n) {
+function Total($n) {
     $sum = 0;
     for ($i = 1; $i <= $n; $i++) {
         $sum += $i;
@@ -23,8 +23,8 @@ function tinhTong($n) {
     return $sum;
 }
 $n = 10; // Thay đổi giá trị n ở đây để tính tổng của các số khác
-$tong = tinhTong($n);
-echo "Tổng của các số từ 1 đến $n là: $tong";
+$total = Total($n);
+echo "Tổng của các số từ 1 đến $n là: $total";
 ?>
 <br>
 
@@ -48,18 +48,17 @@ for($i = 1; $i <= 10; $i ++) {
 <!-- Câu 4. Viết chương trình PHP để kiểm tra xem một chuỗi có chứa một từ cụ thể hay không. -->
 <p>Câu 4 </p>
 <?php
-function kiemTraChuoi($chuoi, $tu) {
-    $kiemTra = strpos($chuoi, $tu);
-    if ($kiemTra !== false) {
-        echo "Chuỗi '$chuoi' chứa từ '$tu'.";
+function checkString1($string1, $string2) {
+    $check = strpos($string1, $string2);
+    if ($check !== false) {
+        echo "Chuỗi '$string1' chứa từ '$string2'.";
     } else {
-        echo "Chuỗi '$chuoi' không chứa từ '$tu'.";
+        echo "Chuỗi '$string1' không chứa từ '$string2'.";
     }
 }
-$chuoi = "Hello, world!"; // Thay đổi chuỗi ở đây để kiểm tra
-$tu = "world"; // Thay đổi từ cụ thể ở đây để kiểm tra
-
-kiemTraChuoi($chuoi, $tu);
+$string1 = "Hello, world!"; // Thay đổi chuỗi ở đây để kiểm tra
+$string2= "world"; // Thay đổi từ cụ thể ở đây để kiểm tra
+checkString1($string1, $string2);
 ?>
 <br>
 <!-- Câu 5. Viết chương trình PHP để tìm giá trị lớn nhất và nhỏ nhất trong một mảng. -->
@@ -109,21 +108,16 @@ foreach($arrTest as $value)
 <!-- Câu 7. Viết chương trình PHP để tính giai thừa của một số nguyên dương. -->
 <p>Câu 7</p>
 <?php
-$a = 5;
-$b = 0;
-$c = 10;
- 
-function tinhGiaithua($n) {
-    if ($n > 0) {
-        return $n * tinhGiaithua ( $n - 1 );
-    } else {
+function factorialCalculation($n) {
+    if ($n == 0 || $n == 1) {
         return 1;
+    } else {
+        return $n * factorialCalculation($n - 1);
     }
 }
-// tính giai thừa
-echo ("Giai thừa của " . $a . " là: " . tinhGiaithua ( $a ) . "<br>");
-echo ("Giai thừa của " . $b . " là: " . tinhGiaithua ( $b ) . "<br>");
-echo ("Giai thừa của " . $c . " là: " . tinhGiaithua ( $c ) . "<br>");
+$number = 5; // Thay đổi giá trị của số nguyên dương ở đây để tính giai thừa khác
+$factorial = factorialCalculation($number);
+echo "Giai thừa của $number là: $factorial";
 ?>
 <br>
 <!-- Câu 8. Viết chương trình PHP để tìm số nguyên tố trong một khoảng cho trước. -->
